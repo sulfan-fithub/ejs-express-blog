@@ -2,8 +2,30 @@
 
 <h1>Home</h1>
 
-<% if (locals.homeContent) { %>
-   <%= homeContent %>
-<% } %>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card">
+      <% if (locals.posts || locals.homeStartingContent) { %>
+      <%= homeStartingContent %>
+      <% posts.forEach(function(post) { %>
+      <div class="card w-75">
+        <div class="card-body">
+          <h3 class="card-title"><%= post.title %></h3>
+          <p class="card-text">
+            <% if (post.body.length > 150) { %>
+              <%= post.body.substring(0, 150) %>... <!-- Truncate the body to 150 characters -->
+              <a href="/post/<%= post.title %>">Read More</a> <!-- Link to the full post -->
+            <% } else { %>
+              <%= post.body %> <!-- If the body is shorter than 150 characters, display the full body -->
+            <% } %>
+          </p>
+          <!-- <a href="#" class="btn btn-primary">Button</a> -->
+        </div>
+      </div>
+      <% }); %>
+      <% } %>
+    </div>
+  </div>
+</div>
 
 <%- include("partials/footer") %>
