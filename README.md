@@ -3,8 +3,6 @@
 
 EJS Express Blog is a simple blogging platform built with Node.js, Express, and EJS (Embedded JavaScript) for the view engine. It allows you to create, read, update, and delete blog posts with a user-friendly interface. This project serves as a basic example of building a web application with Express and EJS.
 
-![Screenshot](screenshot.png)
-
 ## Table of Contents
 
 - [Features](#features)
